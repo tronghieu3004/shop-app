@@ -1,0 +1,36 @@
+
+spring:
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 1MB
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/dev
+    username: dev
+    password: devinroot
+    hikari:
+      max-lifetime: 2000000
+      maximum-pool-size: 20
+      connection-timeout: 3000
+      minimum-idle: 10
+      idle-timeout: 2000
+      pool-name: SpringBootJPAHikariCP
+  application:
+    name: GIABAOBE
+server:
+  port: 8080
+  tomcat:
+    threads:
+      max: 100
+  jetty:
+    max-http-response-header-size: 10KB
+  servlet:
+    context-path: /api
+    encoding:
+      charset: UTF-8
